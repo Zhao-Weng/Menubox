@@ -24,12 +24,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".signInActivity"
-            android:label="@string/title_activity_sign_in"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
             android:name=".LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".SignActivity"
+            android:label="@string/title_activity_sign"></activity>
     </application>
 
 </manifest>

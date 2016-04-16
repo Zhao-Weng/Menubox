@@ -1,5 +1,19 @@
 package com.example.zweng4.menubox;
 
+
+import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -8,7 +22,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
-
+import android.view.View.OnClickListener;
+import android.view.View.OnClickListener;
 public class MainActivity extends AppCompatActivity {
     private Button login_btn;
     private Button signin_btn;
@@ -16,32 +31,41 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        signin_btn = (Button) findViewById(R.id.signin_button);
-        login_btn = (Button) findViewById(R.id.login_button);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        signin_btn = (Button) findViewById(R.id.signin_button);
+        login_btn = (Button) findViewById(R.id.login_button);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+       FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+       });
     }
 
+
+
+
     signin_btn.setOnClickListener(new View.OnClickListener() {
+
+        @Override
         public void onClick(View v) {
-            if (operand1.getText().length() > 0 && operand2.getText().length() > 0) {
-                double oper1 = Double.parseDouble(operand1.getText().toString());
-                double oper2 = Double.parseDouble(operand2.getText().toString());
-                double theResult = oper1 + oper2;
-                result.setText(Double.toString(theResult));
-            } else
-                Toast.makeText(MainActivity.this, "Please enter numbers in both operand", Toast.LENGTH_LONG).show();
+            // do something;
         }
     });
+
+
+    signin_btn.setOnClickListener(new View.OnClickListener() {
+
+        @Override
+        public void onClick(View v) {
+            // do something;
+        }
+    });
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
