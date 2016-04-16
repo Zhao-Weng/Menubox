@@ -42,6 +42,9 @@ public class SignActivity extends AppCompatActivity implements LoaderCallbacks<C
     /**
      * Id to identity READ_CONTACTS permission request.
      */
+
+
+
     private static final int REQUEST_READ_CONTACTS = 0;
 
     /**
@@ -66,6 +69,9 @@ public class SignActivity extends AppCompatActivity implements LoaderCallbacks<C
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign);
+
+
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();
