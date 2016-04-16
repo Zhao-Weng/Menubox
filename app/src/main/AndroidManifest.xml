@@ -21,7 +21,8 @@
         <activity
             android:name=".signInActivity"
             android:label="@string/title_activity_sign_in"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".SearchActivity"></activity>
     </application>
 
 </manifest>
