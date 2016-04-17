@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
                                                  @Override
                                                  public void onClick(View v) {
-                                                     // do something;
+                                                     startActivity(new Intent("logInActivity"));
                                                  }
                                              }
 
