@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_sign_in">signInActivity</string>
     <string name="title_activity_login">Sign in</string>
+    <string name="action_search">Search</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
