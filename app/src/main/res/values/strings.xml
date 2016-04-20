@@ -4,6 +4,10 @@
     <string name="title_activity_sign_in">signInActivity</string>
     <string name="title_activity_login">Sign in</string>
 
+    <!-- Strings related to search -->
+    <string name="search_hint">Enter Restaurnat</string>
+    <string name="menu_search">Search</string>
+
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password (optional)</string>
