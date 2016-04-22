@@ -7,6 +7,8 @@ package com.example.zweng4.menubox;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.ImageView;
 
 public class SingleViewActivity extends Activity {
@@ -24,5 +26,17 @@ public class SingleViewActivity extends Activity {
 
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
         imageView.setImageResource(imageAdapter.mThumbIds[position]);
+        imageView.setOnTouchListener(new View.OnTouchListener(){
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                int eid = event.getAction();
+                switch(eid) {
+                    case MotionEvent.ACTION_DOWN:
+                        finish();
+                        break;
+                }
+                return true;
+            }
+        });
     }
 }

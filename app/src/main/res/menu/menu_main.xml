@@ -2,9 +2,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.zweng4.menubox.MainActivity">
+
+    <item
+        android:id="@+id/action_search"
+        android:orderInCategory="100"
+        android:title="@string/action_search"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_favorite"
+        android:orderInCategory="101"
+        android:title="@string/action_favorites"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_compare"
+        android:orderInCategory="102"
+        android:title="@string/action_compare"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_account"
+        android:orderInCategory="103"
+        android:title="@string/action_account"
+        app:showAsAction="never"/>
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
+        android:orderInCategory="104"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="105"
+        android:title="@string/action_about"
+        app:showAsAction="never"/>
 </menu>

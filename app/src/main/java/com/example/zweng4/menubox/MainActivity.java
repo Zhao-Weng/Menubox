@@ -18,6 +18,9 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class MainActivity extends AppCompatActivity {
     private Button login_btn;
     private Button signin_btn;
+    private int LOG_FLAG = 0;
+    private static final int MENU_ITEM_LOGOUT = 1001;
+    private static final int MENU_ITEM_LOGIN = 1002;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -33,14 +36,7 @@ public class MainActivity extends AppCompatActivity {
         signin_btn = (Button) findViewById(R.id.signin_button);
         login_btn = (Button) findViewById(R.id.login_button);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
@@ -81,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        if (LOG_FLAG == 1) {
+            menu.add(0, MENU_ITEM_LOGOUT, 107, "Logout");
+        } else {
+            menu.add(0, MENU_ITEM_LOGIN, 106, "Login");
+        }
         return true;
     }
 
@@ -90,10 +91,41 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        Intent intent;
+        switch (id) {
+            case R.id.action_search:
+                return true;
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.action_favorite:
+                intent = new Intent(this, FavouriteActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.action_compare:
+                intent = new Intent(this, ComparisonActivity.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.action_account:
+                return true;
+
+            case R.id.action_settings:
+                return true;
+
+            case R.id.action_about:
+                intent = new Intent(this, AboutActivity.class);
+                startActivity(intent);
+                return true;
+
+            case MENU_ITEM_LOGIN:
+                LOG_FLAG = 1;
+                intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+                return true;
+
+            case MENU_ITEM_LOGOUT:
+                LOG_FLAG = 0;
+                return true;
         }
 
         return super.onOptionsItemSelected(item);

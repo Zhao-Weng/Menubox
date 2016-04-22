@@ -62,10 +62,33 @@
             android:label="@string/title_activity_restaurant"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".ImageAdapter"
-            android:label="@string/title_activity_image_adapter"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".SingleViewActivity"></activity>
+            android:name=".UploadActivity"
+            android:label="@string/title_activity_upload"
+            android:parentActivityName=".RestaurantActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.zweng4.menubox.RestaurantActivity" />
+        </activity>
+        <activity
+            android:name=".SingleViewActivity"
+            android:label="SingleViewActivity"
+            android:parentActivityName=".UploadActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <!--<meta-data-->
+            <!--android:name="android.support.PARENT_ACTIVITY"-->
+            <!--android:value="com.example.zweng4.menubox.UploadActivity" />-->
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/title_activity_about"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.zweng4.menubox.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>
