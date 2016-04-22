@@ -2,6 +2,7 @@ package com.example.zweng4.menubox;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -49,6 +50,8 @@ public class UploadActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.add_from_gallery:
                         Toast.makeText(UploadActivity.this, "You Clicked: " + item.getTitle(), Toast.LENGTH_SHORT).show();
+//                        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//                        startActivityForResult(intent, 0);
                         return true;
 
                     case R.id.add_from_camera:
@@ -60,7 +63,12 @@ public class UploadActivity extends AppCompatActivity {
             }
         } );
         popup.show();
+
+
     }
+
+
+
 
     public void uploadImage(View v)
     {

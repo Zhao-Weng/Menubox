@@ -19,22 +19,7 @@ public class RestaurantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restaurant);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ImageButton uploadButton = (ImageButton)findViewById(R.id.uploadButton);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-        uploadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
         //get the gridView
         GridView gridview = (GridView) findViewById(R.id.gridview);
         gridview.setAdapter(new ImageAdapter(this));
@@ -48,8 +33,12 @@ public class RestaurantActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
 
-
+    //when click the image button
+    public void jumpToUploadPage(View view){
+        Intent intent = new Intent(getApplicationContext(), UploadActivity.class);
+        startActivity(intent);
     }
 
     @Override
