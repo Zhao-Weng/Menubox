@@ -18,6 +18,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class MainActivity extends AppCompatActivity {
     private Button login_btn;
     private Button signin_btn;
+    private Button res;
     private int LOG_FLAG = 0;
     private static final int MENU_ITEM_LOGOUT = 1001;
     private static final int MENU_ITEM_LOGIN = 1002;
@@ -36,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         signin_btn = (Button) findViewById(R.id.signin_button);
         login_btn = (Button) findViewById(R.id.login_button);
 
+        res = (Button)findViewById(R.id.res_button);
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -70,6 +72,19 @@ public class MainActivity extends AppCompatActivity {
                                              }
 
         );
+        res.setOnClickListener(new
+
+                                             View.OnClickListener()
+
+                                             {
+
+                                                 @Override
+                                                 public void onClick(View v) {
+                                                     startActivity(new Intent("RestaurantActivity"));
+                                                 }
+                                             }
+
+        );
 
     }
 
@@ -77,11 +92,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        if (LOG_FLAG == 1) {
-            menu.add(0, MENU_ITEM_LOGOUT, 107, "Logout");
-        } else {
-            menu.add(0, MENU_ITEM_LOGIN, 106, "Login");
-        }
+
         return true;
     }
 

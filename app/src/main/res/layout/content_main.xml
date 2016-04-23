@@ -52,4 +52,13 @@
         android:layout_toRightOf="@+id/textView"
         android:layout_toEndOf="@+id/textView" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="res"
+        android:id="@+id/res_button"
+        android:layout_above="@+id/signin_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="36dp" />
+
 </RelativeLayout>
