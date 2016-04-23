@@ -32,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         signin_btn = (Button) findViewById(R.id.signin_button);
@@ -109,6 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.action_favorite:
                 intent = new Intent(this, FavouriteActivity.class);
+                //use the class name, can change the referred name in the manifest but still
+                //get to the correct class
                 startActivity(intent);
                 return true;
 

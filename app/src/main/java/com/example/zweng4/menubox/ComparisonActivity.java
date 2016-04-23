@@ -2,8 +2,8 @@ package com.example.zweng4.menubox;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 public class ComparisonActivity extends AppCompatActivity {
@@ -14,21 +14,21 @@ public class ComparisonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_comparison);
         SQLiteDatabase sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
         //factory optional to instantiate a cursor when query is called.
-        sqLiteDatabase.execSQL("DROP Table contacts");
-        sqLiteDatabase.execSQL("CREATE TABLE contacts(name TEXT, phone INTEGER, email TEXT)");
-        sqLiteDatabase.execSQL("INSERT INTO contacts VALUES('tim',434654654,'tim@email.com');");
 
-        sqLiteDatabase.execSQL("INSERT INTO contacts VALUES('Fred',434133654,'fred@email.com');");
-        sqLiteDatabase.execSQL("INSERT INTO contacts VALUES('tit',434654654,'tim@email.com');");
-        sqLiteDatabase.execSQL("INSERT INTO contacts VALUES('tiu',434654654,'tim@email.com');");
-        Cursor query = sqLiteDatabase.rawQuery("SELECT * FROM contacts", null);//where is filled in to the second argument
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
+        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Cravings', '603 S Wright St');");
+
+        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Dominos Piazza','1108 N Cunningham Ave');");
+        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Kofusion','701 S Gregory St');");
+        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sitara','114 S Race St');");
+        Cursor query = sqLiteDatabase.rawQuery("SELECT * FROM restaurants", null);//where is filled in to the second argument
         if (query.moveToFirst()) {
             do {//cursor is empty if there is no data, else move to the first data
                 //cycle through all records.
                 String name = query.getString(0);//field number
-                int phone = query.getInt(1);
-                String email = query.getString(2);
-                Toast.makeText(getBaseContext(), "Name =  " + name + " phone =" + phone + " email = " + email, Toast.LENGTH_LONG).show();
+                String location = query.getString(1);
+
+                Toast.makeText(getBaseContext(), "Name =  " + name + " location =" + location , Toast.LENGTH_SHORT).show();
             } while (query.moveToNext());
 
 
@@ -38,5 +38,8 @@ public class ComparisonActivity extends AppCompatActivity {
 
         }
         sqLiteDatabase.close();
+
+
+
     }
 }
