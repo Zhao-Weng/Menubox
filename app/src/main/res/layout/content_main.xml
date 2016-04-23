@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/blur"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -13,52 +14,52 @@
     tools:showIn="@layout/activity_main">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Menubox"
-        android:id="@+id/textView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Menubox"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/editOperand1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:layout_marginTop="171dp"
-        android:layout_below="@+id/textView"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/textView"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="171dp"
+        android:ems="10"
+        android:inputType="numberDecimal" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Signup"
         android:id="@+id/signin_button"
-        android:layout_marginBottom="47dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="47dp"
         android:layout_toLeftOf="@+id/textView"
-        android:layout_toStartOf="@+id/textView" />
+        android:layout_toStartOf="@+id/textView"
+        android:text="Signup" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
         android:id="@+id/login_button"
-        android:layout_alignTop="@+id/signin_button"
-        android:layout_toRightOf="@+id/textView"
-        android:layout_toEndOf="@+id/textView" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="res"
+        android:layout_alignTop="@+id/signin_button"
+        android:layout_toEndOf="@+id/textView"
+        android:layout_toRightOf="@+id/textView"
+        android:text="Login" />
+
+    <Button
         android:id="@+id/res_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/signin_button"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="36dp" />
+        android:layout_marginBottom="36dp"
+        android:text="res" />
 
 </RelativeLayout>

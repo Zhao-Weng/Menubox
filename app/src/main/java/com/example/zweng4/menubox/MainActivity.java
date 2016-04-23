@@ -2,6 +2,7 @@ package com.example.zweng4.menubox;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
@@ -38,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         signin_btn = (Button) findViewById(R.id.signin_button);
         login_btn = (Button) findViewById(R.id.login_button);
+
+        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Always_In_My_Heart.ttf");
+        TextView myTextView = (TextView) findViewById(R.id.textView);
+        myTextView.setTypeface(myTypeFace);
 
         res = (Button)findViewById(R.id.res_button);
 
