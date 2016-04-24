@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         signin_btn = (Button) findViewById(R.id.signin_button);
         login_btn = (Button) findViewById(R.id.login_button);
 
-        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Always_In_My_Heart.ttf");
+        Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/orange_juice.ttf");
         TextView myTextView = (TextView) findViewById(R.id.textView);
         myTextView.setTypeface(myTypeFace);
 
