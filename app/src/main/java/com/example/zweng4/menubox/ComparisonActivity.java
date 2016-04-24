@@ -48,8 +48,54 @@ public class ComparisonActivity extends AppCompatActivity {
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sitara','114 S Race St');");
         sqLiteDatabase.close();
 
+        compare = compare_txt.getText().toString();
+
+        max = 0;
+        sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+        query = sqLiteDatabase.rawQuery("SELECT * FROM restaurants" , null);
+        if (query.moveToFirst()) {
+            do  {//cursor is empty if there is no data, else move to the first data
+                max ++;
+
+            } while (query.moveToNext());
+        }
+        else Toast.makeText(getBaseContext(), "No restaurant match", Toast.LENGTH_LONG).show();
+        sqLiteDatabase.close(); //count number of selected tuples.
+
+        sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+        query = sqLiteDatabase.rawQuery("SELECT * FROM restaurants", null);//where is filled in to the second argument
+        i = 0;
+
+        if (query.moveToFirst()) {
+            do {//cursor is empty if there is no data, else move to the first data
+                //cycle through all records.
+                name = query.getString(0);//field number
+                location = query.getString(1);
+
+
+                mobileArray[i] = name + "   " + location;
+                i++;
+
+            } while (query.moveToNext() && i < max);
+
+
+        } else {
+            Toast.makeText(getBaseContext(), "error retrieving data", Toast.LENGTH_LONG).show();
+
+        }
+        sqLiteDatabase.close();
+
+
+
+        listView = (ListView) findViewById(R.id.xmlListView);
+        listView.setAdapter(adapter);
+
+
+
         search_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                for(i = 0; i <8;i++)
+                    mobileArray[i] = " ";
                 compare = compare_txt.getText().toString();
                 max = 0;
                 sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
