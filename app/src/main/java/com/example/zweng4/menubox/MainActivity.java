@@ -1,16 +1,22 @@
 package com.example.zweng4.menubox;
 
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
@@ -21,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private Button login_btn;
     private Button signin_btn;
     private Button res;
+    private EditText editText;
     private int LOG_FLAG = 0;
     private static final int MENU_ITEM_LOGOUT = 1001;
     private static final int MENU_ITEM_LOGIN = 1002;
@@ -40,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         signin_btn = (Button) findViewById(R.id.signin_button);
         login_btn = (Button) findViewById(R.id.login_button);
-
+        editText = (EditText) findViewById(R.id.editOperand1);
         Typeface myTypeFace = Typeface.createFromAsset(getAssets(), "fonts/Organo.ttf");
         TextView myTextView = (TextView) findViewById(R.id.textView);
         myTextView.setTypeface(myTypeFace);
@@ -50,6 +57,20 @@ public class MainActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+        editText.setOnClickListener(new
+
+                                              View.OnClickListener()
+
+                                              {
+
+                                                  @Override
+                                                  public void onClick(View v) {
+                                                      onSearchRequested();
+                                                  }
+                                              }
+
+        );
 
 
         signin_btn.setOnClickListener(new
@@ -101,6 +122,13 @@ public class MainActivity extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
+        // Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+        // Assumes current activity is the searchable activity
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        searchView.setIconifiedByDefault(true); // Do not iconify the widget; expand it by default
+
         return true;
     }
 
@@ -112,8 +140,6 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         Intent intent;
         switch (id) {
-            case R.id.action_search:
-                return true;
 
             case R.id.action_favorite:
                 intent = new Intent(this, FavouriteActivity.class);

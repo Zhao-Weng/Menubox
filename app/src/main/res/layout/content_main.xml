@@ -38,13 +38,14 @@
 
     <EditText
         android:id="@+id/editOperand1"
+        android:hint="@string/search_hint"
         android:layout_width="250dp"
         android:layout_height="40dp"
         android:textCursorDrawable="@drawable/white_cursor"
         android:layout_gravity="center_horizontal"
         android:ems="10"
         android:background="#4DFF"
-        android:inputType="numberDecimal"
+        android:inputType="text"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends ListActivity {
-    private String restaurants[] = {"Restaurant 1","Restaurant 2","Restaurant 3","Restaurant 4","Restaurant 5"};
+    private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitari"};
     private List<String> results = new ArrayList<>();
     ListView listView;
 
@@ -75,5 +76,7 @@ public class SearchActivity extends ListActivity {
         listView.setAdapter(adapter);
     }
 
+    protected void onListItemClick(ListView list, View view, int position, long id){
 
+    }
 }
