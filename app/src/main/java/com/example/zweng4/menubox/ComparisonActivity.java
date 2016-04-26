@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Toast;
 
+
 public class ComparisonActivity extends AppCompatActivity {
     private String[] mobileArray = {" "," "," "," "," "," "," "," "};
     private EditText compare_txt;

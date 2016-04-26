@@ -23,7 +23,7 @@
     <string name="title_activity_favourite">favourite</string>
     <string name="title_activity_restaurant">RestaurantActivity</string>
     <string name="title_activity_image_adapter">ImageAdapter</string>
-    <string name="title_activity_upload">UploadActivity</string>
+    <string name="title_activity_upload">Menubox</string>
     <string name="add_from_gallery">Add From Gallery</string>
     <string name="add_from_camera">Add From Camera</string>
     <string name="action_search">Search</string>

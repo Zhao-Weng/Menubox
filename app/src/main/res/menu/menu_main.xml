@@ -4,7 +4,7 @@
     tools:context="com.example.zweng4.menubox.MainActivity">
 
     <item android:id="@+id/action_search"
-        android:title="@string/app_name"
+        android:title="Menubox"
         android:icon="@drawable/ic_menu_search"
         app:showAsAction="collapseActionView|ifRoom"
         app:actionViewClass="android.support.v7.widget.SearchView" />
