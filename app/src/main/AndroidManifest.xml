@@ -113,7 +113,8 @@
 
         <!-- The following declaration is for the search activity -->
         <activity android:name=".SearchActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
