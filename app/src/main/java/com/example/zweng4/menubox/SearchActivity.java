@@ -21,7 +21,7 @@ import java.util.Queue;
 
 public class SearchActivity extends AppCompatActivity {
     private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitari"};
-    private List<String> results = new ArrayList<>();
+
     ListView listView;
 
     @Override
@@ -32,10 +32,11 @@ public class SearchActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         listView = (ListView) findViewById(android.R.id.list);
         Bundle extras = getIntent().getExtras();
-        if (extras != null) {
+        if (extras != null ) {
             String query_content = extras.getString("query_content");
             //call query function directly.
-            doMySearch(query_content);
+            if(query_content != null)
+                doMySearch(query_content);
         } else {
             handleIntent(getIntent());
         }
@@ -73,11 +74,13 @@ public class SearchActivity extends AppCompatActivity {
     private void handleIntent(Intent intent) {
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
             String query = intent.getStringExtra(SearchManager.QUERY);
-            doMySearch(query);
+            if(query != null)
+                doMySearch(query);
         }
     }
 
     private void doMySearch(String query){
+        List<String> results = new ArrayList<>();
         for (int i = 0; i < 5; i ++){
             if(restaurants[i].toLowerCase().contains(query.toLowerCase())){
                 results.add(restaurants[i]);
