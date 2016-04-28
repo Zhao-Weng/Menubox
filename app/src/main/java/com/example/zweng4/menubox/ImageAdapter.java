@@ -1,6 +1,9 @@
 package com.example.zweng4.menubox;
 
 import android.content.Context;
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,7 +12,8 @@ import android.widget.ImageView;
 
 public class ImageAdapter extends BaseAdapter {
     private Context mContext;
-
+    private float mThumbWidthdp = 90;
+    private float mThumbHeightdp = 100;
     // Constructor
     public ImageAdapter(Context c) {
         mContext = c;
@@ -32,17 +36,27 @@ public class ImageAdapter extends BaseAdapter {
         ImageView imageView;
 
         if (convertView == null) {
+            int mThumbWidthPixel = convertDpToPixels(mThumbWidthdp, mContext);
+            int mThumbHeightPixel = convertDpToPixels(mThumbHeightdp, mContext);
             imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(85, 85));
+            imageView.setLayoutParams(new GridView.LayoutParams(mThumbWidthPixel, mThumbHeightPixel));
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
+            //imageView.setPadding(8, 8, 8, 8);
         } else {
             imageView = (ImageView) convertView;
         }
         imageView.setImageResource(mThumbIds[position]);
         return imageView;
     }
-
+    //convert desire dp to pixels
+    public static int convertDpToPixels(float dp, Context context){
+        Resources resources = context.getResources();
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                dp,
+                resources.getDisplayMetrics()
+        );
+    }
     // Keep all Images in array
     public Integer[] mThumbIds = {
             R.drawable.m1, R.drawable.m2,
