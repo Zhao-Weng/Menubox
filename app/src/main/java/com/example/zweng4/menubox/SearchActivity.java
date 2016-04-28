@@ -77,6 +77,9 @@ public class SearchActivity extends ListActivity {
     }
 
     protected void onListItemClick(ListView list, View view, int position, long id){
-
+        Intent intent = new Intent(this, RestaurantActivity.class);
+        //use the class name, can change the referred name in the manifest but still
+        //get to the correct class
+        startActivity(intent);
     }
 }
