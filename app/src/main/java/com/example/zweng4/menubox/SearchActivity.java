@@ -17,6 +17,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
 
 public class SearchActivity extends AppCompatActivity {
     private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitari"};
@@ -29,9 +30,15 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         listView = (ListView) findViewById(android.R.id.list);
-        handleIntent(getIntent());
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String query_content = extras.getString("query_content");
+            //call query function directly.
+            doMySearch(query_content);
+        } else {
+            handleIntent(getIntent());
+        }
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 Intent intent = new Intent(getApplicationContext(), RestaurantActivity.class);

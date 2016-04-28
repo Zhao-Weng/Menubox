@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -56,19 +57,35 @@ public class MainActivity extends AppCompatActivity {
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-        editText.setOnClickListener(new
-
-                                              View.OnClickListener()
-
-                                              {
-
-                                                  @Override
-                                                  public void onClick(View v) {
-                                                      onSearchRequested();
-                                                  }
-                                              }
-
-        );
+//        editText.setOnClickListener(new
+//
+//                                              View.OnClickListener()
+//
+//                                              {
+//
+//                                                  @Override
+//                                                  public void onClick(View v) {
+//                                                      onSearchRequested();
+//                                                  }
+//                                              }
+//
+//        );
+        editText.setOnKeyListener(new View.OnKeyListener() {
+            public boolean onKey(View v, int keyCode, KeyEvent event) {
+                // If the event is a key-down event on the "enter" button
+                if ((event.getAction() == KeyEvent.ACTION_DOWN) &&
+                        (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    // Perform action on key press
+                    String Query = editText.getText().toString();
+                    Query = Query.replace("\n", "").replace("\r","");
+                    Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                    intent.putExtra("query_content", Query);
+                    startActivity(intent);
+                    return true;
+                }
+                return false;
+            }
+        });
 
 
         signin_btn.setOnClickListener(new
