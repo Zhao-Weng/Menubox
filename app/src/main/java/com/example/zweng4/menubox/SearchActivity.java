@@ -10,6 +10,7 @@ import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -17,7 +18,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends ListActivity {
+public class SearchActivity extends AppCompatActivity {
     private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitari"};
     private List<String> results = new ArrayList<>();
     ListView listView;
@@ -27,9 +28,18 @@ public class SearchActivity extends ListActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         listView = (ListView) findViewById(android.R.id.list);
         handleIntent(getIntent());
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                Intent intent = new Intent(getApplicationContext(), RestaurantActivity.class);
+                //use the class name, can change the referred name in the manifest but still
+                //get to the correct class
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -76,10 +86,10 @@ public class SearchActivity extends ListActivity {
         listView.setAdapter(adapter);
     }
 
-    protected void onListItemClick(ListView list, View view, int position, long id){
-        Intent intent = new Intent(this, RestaurantActivity.class);
-        //use the class name, can change the referred name in the manifest but still
-        //get to the correct class
-        startActivity(intent);
-    }
+//    protected void onListItemClick(ListView list, View view, int position, long id){
+//        Intent intent = new Intent(this, RestaurantActivity.class);
+//        //use the class name, can change the referred name in the manifest but still
+//        //get to the correct class
+//        startActivity(intent);
+//    }
 }
