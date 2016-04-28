@@ -24,7 +24,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class MainActivity extends AppCompatActivity {
     private Button login_btn;
     private Button signin_btn;
-    private Button res;
+
     private EditText editText;
     private int LOG_FLAG = 0;
     private static final int MENU_ITEM_LOGOUT = 1001;
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
         TextView myTextView = (TextView) findViewById(R.id.textView);
         myTextView.setTypeface(myTypeFace);
 
-        res = (Button)findViewById(R.id.res_button);
+
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.

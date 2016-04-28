@@ -68,18 +68,8 @@
         android:text="Login"
         android:background="#00FF"
         android:textColor="#FFFF"
-        android:layout_alignTop="@+id/res_button"
         android:layout_toEndOf="@+id/textView"
-        android:layout_toRightOf="@+id/textView" />
-
-    <Button
-        android:id="@+id/res_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset"
-        android:background="#00FF"
-        android:textColor="#FFFF"
-        android:layout_alignTop="@+id/signin_button"
-        android:layout_centerHorizontal="true" />
+        android:layout_toRightOf="@+id/textView"
+        android:layout_alignTop="@+id/signin_button" />
 
 </RelativeLayout>
