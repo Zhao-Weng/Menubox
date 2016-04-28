@@ -23,9 +23,9 @@ public class SingleViewActivity extends Activity {
         // Selected image id
         int position = i.getExtras().getInt("id");
         ImageAdapter imageAdapter = new ImageAdapter(this);
-
+        ImageAdapter.Item item = (ImageAdapter.Item) imageAdapter.getItem(position);
         ImageView imageView = (ImageView) findViewById(R.id.SingleView);
-        imageView.setImageResource(imageAdapter.mThumbIds[position]);
+        imageView.setImageResource(item.drawableId);
         imageView.setOnTouchListener(new View.OnTouchListener(){
             @Override
             public boolean onTouch(View v, MotionEvent event) {
