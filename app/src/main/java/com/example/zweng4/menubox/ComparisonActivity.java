@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -15,7 +16,8 @@ import android.widget.Toast;
 public class ComparisonActivity extends AppCompatActivity {
     private String[] mobileArray = {" "," "," "," "," "," "," "," "};
     private EditText compare_txt;
-    private ImageButton search_btn;
+    //private ImageButton search_btn;
+    private ImageView search_btn;
     private SQLiteDatabase sqLiteDatabase;
 
     private ListView listView;
@@ -35,7 +37,8 @@ public class ComparisonActivity extends AppCompatActivity {
 
         adapter = new ArrayAdapter<String>(this, R.layout.activity_listview, mobileArray);
         compare_txt = (EditText)findViewById(R.id.compare_txt);
-        search_btn = (ImageButton)findViewById(R.id.search_btn);
+        //search_btn = (ImageButton)findViewById(R.id.search_btn);
+        search_btn = (ImageView)findViewById(R.id.search_btn);
         sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
         //factory optional to instantiate a cursor when query is called.
 
