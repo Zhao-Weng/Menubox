@@ -32,7 +32,12 @@ public class RestaurantListAdapter extends ArrayAdapter<Restaurant>{
 
         TextView nameText = (TextView) convertView.findViewById(R.id.nameText);
         nameText.setText(restaurant.getName());
-
+        TextView cuisineText = (TextView) convertView.findViewById(R.id.cuisineText);
+        cuisineText.setText(restaurant.getCuisine());
+        TextView addressText = (TextView) convertView.findViewById(R.id.addressText);
+        addressText.setText(restaurant.getAddress());
+        TextView priceText = (TextView) convertView.findViewById(R.id.priceText);
+        priceText.setText(restaurant.getPrice());
         return convertView;
     }
 }

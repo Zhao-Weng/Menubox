@@ -60,20 +60,20 @@
         android:orientation="horizontal"
         android:padding="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginStart="50dp">
+        android:layout_marginStart="20dp">
 
         <ImageView
             android:id="@+id/compareIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="bottom"
             android:src="@drawable/compareicon"
             android:onClick="addToCompareList"/>
 
         <ImageView
             android:id="@+id/favoriteIcon"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_gravity="bottom"
             android:src="@drawable/favoriteicon"
             android:onClick="addToFavoriteList"/>
