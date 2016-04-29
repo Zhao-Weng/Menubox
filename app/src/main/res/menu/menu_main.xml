@@ -1,0 +1,37 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.zweng4.menubox.MainActivity">
+
+    <item android:id="@+id/action_search"
+        android:title="Menubox"
+        android:icon="@drawable/ic_menu_search"
+        app:showAsAction="collapseActionView|ifRoom"
+        app:actionViewClass="android.support.v7.widget.SearchView" />
+
+    <item
+        android:id="@+id/action_favorite"
+        android:orderInCategory="101"
+        android:title="@string/action_favorites"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_compare"
+        android:orderInCategory="102"
+        android:title="@string/action_compare"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_account"
+        android:orderInCategory="103"
+        android:title="@string/action_account"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="104"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_about"
+        android:orderInCategory="105"
+        android:title="@string/action_about"
+        app:showAsAction="never"/>
+</menu>
