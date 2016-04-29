@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/orange"
+    android:background="@drawable/menubox_app_bg_light"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -40,15 +40,15 @@
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name: "
-                    android:textCursorDrawable="@drawable/white_cursor"
                     android:background="@android:color/transparent"
+                    android:hint="Name: "
                     android:imeActionId="@+id/login_finish"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/white_cursor" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -60,34 +60,34 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/prompt_email"
-                    android:textCursorDrawable="@drawable/white_cursor"
                     android:background="@android:color/transparent"
+                    android:hint="@string/prompt_email"
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/white_cursor" />
 
             </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:id="@+id/password"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textCursorDrawable="@drawable/white_cursor"
-                android:background="@android:color/transparent"
-                android:hint="@string/prompt_password"
-                android:imeActionId="@+id/login_finish"
-                android:imeActionLabel="@string/action_sign_in_short"
-                android:imeOptions="actionUnspecified"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:singleLine="true" />
+                android:layout_height="wrap_content">
 
-        </android.support.design.widget.TextInputLayout>
+                <EditText
+                    android:id="@+id/password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/prompt_password"
+                    android:imeActionId="@+id/login_finish"
+                    android:imeActionLabel="@string/action_sign_in_short"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/white_cursor" />
+
+            </android.support.design.widget.TextInputLayout>
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -97,15 +97,15 @@
                     android:id="@+id/password_again"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Password again: "
-                    android:textCursorDrawable="@drawable/white_cursor"
                     android:background="@android:color/transparent"
+                    android:hint="Password again: "
                     android:imeActionId="@+id/login_finish"
                     android:imeActionLabel="@string/action_sign_in_short"
                     android:imeOptions="actionUnspecified"
                     android:inputType="textPassword"
                     android:maxLines="1"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:textCursorDrawable="@drawable/white_cursor" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -115,9 +115,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:background="#4DFF"
                 android:text="Sign up"
                 android:textColor="#FFFF"
-                android:background="#4DFF"
                 android:textStyle="bold" />
 
         </LinearLayout>

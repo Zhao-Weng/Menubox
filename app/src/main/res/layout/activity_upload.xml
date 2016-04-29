@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:background="@drawable/orange"
+    android:background="@drawable/menubox_app_bg_light"
     tools:context="com.example.zweng4.menubox.UploadActivity">
 
     <android.support.design.widget.AppBarLayout

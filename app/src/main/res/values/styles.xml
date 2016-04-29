@@ -8,12 +8,18 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <!--<item name="android:titleTextStyle">@style/MyActionBarTitleText</item>-->
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <!--<item name="android:titleTextStyle">@style/MyActionBarTitleText</item>-->
     </style>
+
+    <!--<style name="MyActionBarTitleText">-->
+        <!--<item name="android:textColor">@color/titleTextColor</item>-->
+    <!--</style>-->
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

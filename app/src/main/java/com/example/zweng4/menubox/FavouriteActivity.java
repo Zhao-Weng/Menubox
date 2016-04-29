@@ -11,11 +11,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
-<<<<<<< HEAD
 import android.widget.ListAdapter;
-=======
 import android.widget.ImageView;
->>>>>>> d2969fa008df2c46f727bf9a8fd7cc911e332593
 import android.widget.ListView;
 import android.widget.Toast;
 
