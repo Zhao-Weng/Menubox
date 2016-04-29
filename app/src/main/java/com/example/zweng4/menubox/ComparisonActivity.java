@@ -5,10 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -21,7 +20,7 @@ public class ComparisonActivity extends AppCompatActivity {
     private SQLiteDatabase sqLiteDatabase;
 
     private ListView listView;
-    ArrayAdapter adapter;
+    ListAdapter adapter;
 
     private String compare;
     private Cursor query;
@@ -35,7 +34,7 @@ public class ComparisonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comparison);
 
-        adapter = new ArrayAdapter<String>(this, R.layout.activity_listview, mobileArray);
+        adapter = new CustomAdapter(this, mobileArray);
         compare_txt = (EditText)findViewById(R.id.compare_txt);
         //search_btn = (ImageButton)findViewById(R.id.search_btn);
         search_btn = (ImageView)findViewById(R.id.search_btn);
@@ -47,7 +46,7 @@ public class ComparisonActivity extends AppCompatActivity {
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Cravings', '603 S Wright St');");
 
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Dominos Pizza','1108 N Cunningham Ave');");
+        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Dominos Pizza','1108 N Ave');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Kofusion','701 S Gregory St');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sitara','114 S Race St');");
         sqLiteDatabase.close();

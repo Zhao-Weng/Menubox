@@ -64,7 +64,6 @@ public class FavouriteActivity extends AppCompatActivity {
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Seoul Taco','608 S 6th St');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Spoon House','616 E Green St');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Qdoba','1401 W Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Black Dog Smoke and Ale House','201 N Broadway St');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Azzip Pizza','505 E Green St');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sushi Ichiban','619 S Wright St');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Flat Top Grill','607 S 6th St');");
