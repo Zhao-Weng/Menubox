@@ -7,5 +7,5 @@
     <ImageView android:id="@+id/SingleView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/orange"/>
+        android:background="@drawable/menubox_app_bg_light"/>
 </LinearLayout>

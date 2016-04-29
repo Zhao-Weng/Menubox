@@ -112,7 +112,8 @@
         </activity>
 
         <!-- The following declaration is for the search activity -->
-        <activity android:name=".SearchActivity"
+        <activity
+            android:name=".SearchActivity"
             android:launchMode="singleTop"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
@@ -124,7 +125,8 @@
         </activity>
 
         <!-- This meta-data allows a user to use search in any screen that presents a search icon in the toolbar -->
-        <meta-data android:name="android.app.default_searchable"
+        <meta-data
+            android:name="android.app.default_searchable"
             android:value=".SearchActivity" />
     </application>
 

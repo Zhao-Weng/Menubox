@@ -52,24 +52,10 @@ public class MainActivity extends AppCompatActivity {
         myTextView.setTypeface(myTypeFace);
 
 
-
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
 
-//        editText.setOnClickListener(new
-//
-//                                              View.OnClickListener()
-//
-//                                              {
-//
-//                                                  @Override
-//                                                  public void onClick(View v) {
-//                                                      onSearchRequested();
-//                                                  }
-//                                              }
-//
-//        );
         editText.setOnKeyListener(new View.OnKeyListener() {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 // If the event is a key-down event on the "enter" button
@@ -77,8 +63,8 @@ public class MainActivity extends AppCompatActivity {
                         (keyCode == KeyEvent.KEYCODE_ENTER)) {
                     // Perform action on key press
                     String Query = editText.getText().toString();
-                    Query = Query.replace("\n", "").replace("\r","");
-                    Intent intent = new Intent(getApplicationContext(),SearchActivity.class);
+                    Query = Query.replace("\n", "").replace("\r", "");
+                    Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
                     intent.putExtra("query_content", Query);
                     startActivity(intent);
                     return true;
@@ -101,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
                                               }
 
         );
-
 
         login_btn.setOnClickListener(new
 

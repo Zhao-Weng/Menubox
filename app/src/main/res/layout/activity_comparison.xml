@@ -7,7 +7,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/orange"
+    android:background="@drawable/menubox_app_bg_light"
     tools:context="com.example.zweng4.menubox.ComparisonActivity">
     <EditText
         android:layout_width="wrap_content"

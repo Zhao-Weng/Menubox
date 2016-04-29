@@ -12,6 +12,9 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListAdapter;
+
+import android.widget.ImageView;
+
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -22,7 +25,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class FavouriteActivity extends AppCompatActivity {
     String[] mobileArray = {" "," "," ", " ", " ", " ", " ", " ", " ", " ", " "," "," "," "," "," "," ", " ", " "," ", " ",};
     private EditText fav_txt;
-    private ImageButton search_btn;
+    private ImageView search_btn;
     private SQLiteDatabase sqLiteDatabase;
 
     private ListView listView;
@@ -46,7 +49,8 @@ public class FavouriteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favourite);
         adapter = new CustomAdapter(this, mobileArray);
         fav_txt = (EditText) findViewById(R.id.fav_txt);
-        search_btn = (ImageButton) findViewById(R.id.search_btn);
+        //search_btn = (ImageButton) findViewById(R.id.search_btn);
+        search_btn = (ImageView)findViewById(R.id.search_btn);
         sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
         //factory optional to instantiate a cursor when query is called.
 
