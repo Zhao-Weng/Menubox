@@ -9,9 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -26,8 +26,8 @@ public class FavouriteActivity extends AppCompatActivity {
     private SQLiteDatabase sqLiteDatabase;
 
     private ListView listView;
-    ArrayAdapter adapter;
 
+    private ListAdapter adapter;
     private String fav;
     private Cursor query;
     private int i;
@@ -44,7 +44,7 @@ public class FavouriteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite);
-        adapter = new ArrayAdapter<String>(this, R.layout.activity_listview, mobileArray);
+        adapter = new CustomAdapter(this, mobileArray);
         fav_txt = (EditText) findViewById(R.id.fav_txt);
         search_btn = (ImageButton) findViewById(R.id.search_btn);
         sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
