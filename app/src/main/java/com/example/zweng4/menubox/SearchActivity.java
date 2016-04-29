@@ -20,9 +20,11 @@ import java.util.List;
 import java.util.Queue;
 
 public class SearchActivity extends AppCompatActivity {
-    private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitari"};
+    private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitara"};
 
     ListView listView;
+
+    private List<Restaurant> restaurantsWithImage = RestaurantDataProvider.restaurantList;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        listView = (ListView) findViewById(android.R.id.list);
+        listView = (ListView) findViewById(R.id.list);
         Bundle extras = getIntent().getExtras();
         if (extras != null ) {
             String query_content = extras.getString("query_content");
@@ -80,26 +82,48 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void doMySearch(String query){
-        List<String> results = new ArrayList<>();
-        for (int i = 0; i < 5; i ++){
-            if(restaurants[i].toLowerCase().contains(query.toLowerCase())){
-                results.add(restaurants[i]);
+//        List<String> results = new ArrayList<>();
+//        for (int i = 0; i < 5; i ++){
+//            if(restaurants[i].toLowerCase().contains(query.toLowerCase())){
+//                results.add(restaurants[i]);
+//            }
+//        }
+//        if (results.size() == 0)
+//            results.add("No Restaurants Found");
+
+//        String[] finalResults = results.toArray(new String[results.size()]);
+//        ArrayAdapter<String> adapter =
+//                new ArrayAdapter<>(this, R.layout.search_adapter, finalResults);
+//
+//        listView.setAdapter(adapter);
+        List<Restaurant> results = new ArrayList<>();
+        for(Restaurant item: restaurantsWithImage)
+        {
+            String lowerCaseQuery = query.toLowerCase();
+            //if the query matches any of the restaurant information (including name, address, etc.
+            //we will add it to our result.
+            if(item.getName().toLowerCase().contains(lowerCaseQuery) ||
+                item.getAddress().toLowerCase().contains(lowerCaseQuery) ||
+                    item.getCuisine().toLowerCase().contains(lowerCaseQuery) ||
+                    item.getPrice().toLowerCase().contains(lowerCaseQuery)){
+
+                results.add(item);
             }
         }
-        if (results.size() == 0)
-            results.add("No Restaurants Found");
-
-        String[] finalResults = results.toArray(new String[results.size()]);
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<>(this, R.layout.search_adapter, finalResults);
-
-        listView.setAdapter(adapter);
+        if(results.size() == 0)
+        {
+            String[] notFound = new String[1];
+            notFound[0] = new String("No Restaurants Found");
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.search_adapter, notFound);
+        }
+        else {
+            //Restaurant[] finalResults = results.toArray(new Restaurant[results.size()]);
+            RestaurantListAdapter adapter = new RestaurantListAdapter(
+                    this, R.layout.list_item, results);
+            listView.setAdapter(adapter);
+        }
     }
 
-//    protected void onListItemClick(ListView list, View view, int position, long id){
-//        Intent intent = new Intent(this, RestaurantActivity.class);
-//        //use the class name, can change the referred name in the manifest but still
-//        //get to the correct class
-//        startActivity(intent);
-//    }
+    public void addToFavoriteList(View v){}
+    public void addToCompareList(View v){}
 }

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/restaurantImageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src = "@drawable/m1"
+        android:layout_margin="5dp"/>
+
+    <LinearLayout
+        android:id="@+id/restaurantInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/restaurantImageView"
+        android:layout_toRightOf="@id/restaurantImageView"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp">
+
+        <TextView
+            android:id="@+id/nameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restaurant name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/cuisineText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cuisine name"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/addressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address name"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/priceText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Price name"
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/actionIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_toEndOf="@+id/restaurantInfo"
+        android:layout_toRightOf="@id/restaurantInfo"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="50dp">
+
+        <ImageView
+            android:id="@+id/compareIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/compareicon"
+            android:onClick="addToCompareList"/>
+
+        <ImageView
+            android:id="@+id/favoriteIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="bottom"
+            android:src="@drawable/favoriteicon"
+            android:onClick="addToFavoriteList"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
