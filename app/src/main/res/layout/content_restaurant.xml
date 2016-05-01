@@ -12,12 +12,31 @@
     tools:context="com.example.zweng4.menubox.RestaurantActivity"
     tools:showIn="@layout/activity_restaurant">
 
+    <FrameLayout
+        android:id="@+id/restaurantMainPageImage"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/m1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp">
+
+        <TextView
+            android:id="@+id/restaurantMainPageName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:text="Restaurant"
+            android:textAlignment="center" />
+    </FrameLayout>
+
     <GridView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/gridview"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/restaurantMainPageImage"
         android:horizontalSpacing="5dp"
         android:verticalSpacing="5dp"
         android:numColumns="4" />
