@@ -25,7 +25,8 @@
         android:id="@+id/xmlListView"
         android:layout_below="@+id/compare_txt"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="#DDFF"/>
 
     <ImageView
         android:layout_width="wrap_content"

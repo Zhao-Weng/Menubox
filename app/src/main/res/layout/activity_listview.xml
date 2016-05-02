@@ -3,11 +3,10 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:gravity="left|center"
+    android:layout_height="80dp"
     android:layout_width="fill_parent"
     android:paddingBottom="5px"
-    android:background="@drawable/orange"
+    android:background="@drawable/menubox_app_bg_light"
     android:paddingTop="5px"
     android:paddingLeft="5px">
 
@@ -18,7 +17,7 @@
     <TextView android:id="@+id/item_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="30px"
+        android:textSize="25px"
         android:textStyle="bold"
         android:layout_marginLeft="10px"
         android:textColor="#0099CC">
@@ -30,7 +29,10 @@
         android:layout_height="wrap_content"
         android:text="like"
         android:id="@+id/item_btn"
-        android:layout_alignParentTop="true"
+        android:textSize="25px"
+        android:background="#FDF9EE"
+        android:textColor="#DDEE6379"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -39,10 +41,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:layout_alignTop="@+id/item_btn"
+        android:text="VS"
+        android:textSize="25px"
+        android:textColor="#DDEE6379"
+        android:background="#FDF9EE"
+        android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/item_btn"
-        android:layout_toStartOf="@+id/item_btn"
-        android:text="VS" />
+        android:layout_toStartOf="@+id/item_btn" />
 
 
 
