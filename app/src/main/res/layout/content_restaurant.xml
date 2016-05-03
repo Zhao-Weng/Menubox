@@ -16,7 +16,7 @@
         android:id="@+id/restaurantMainPageImage"
         android:layout_width="match_parent"
         android:layout_height="120dp"
-        android:background="@drawable/m1"
+        android:background="@drawable/cravings_overview"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp">
 
