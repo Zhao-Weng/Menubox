@@ -18,7 +18,7 @@ public final class RestaurantDataProvider {
 
         addRestaurant("cravings_front_door",
                 "Cravings", "Chinese", "Champaign IL", "$");
-        addRestaurant("dominos_pizza_front_door",
+        addRestaurant("dominos_front_door",
                 "Dominos Pizza", "Italian", "Champaign IL", "$");
         addRestaurant("mia_zas_front_door",
                 "Mia Zas", "Italian", "Champaign IL", "$");
