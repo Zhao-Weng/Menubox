@@ -16,16 +16,24 @@ public final class RestaurantDataProvider {
 
     static {
 
-        addRestaurant("restaurant101",
-                "Cravings", "Chinese", "Champaign IL", "Cheap");
-        addRestaurant("restaurant102",
-                "Dominos Pizza", "Italian", "Champaign IL", "Cheap");
-        addRestaurant("restaurants103",
-                "Mia Zas", "Italian", "Champaign IL", "Cheap");
-        addRestaurant("restaurants104",
-                "Kofusion", "Korean", "Champaign IL", "Cheap");
-        addRestaurant("restaurants105",
-                "Sitari", "Indian", "Urbana IL", "Cheap");
+        addRestaurant("cravings_front_door",
+                "Cravings", "Chinese", "Champaign IL", "$");
+        addRestaurant("dominos_pizza_front_door",
+                "Dominos Pizza", "Italian", "Champaign IL", "$");
+        addRestaurant("mia_zas_front_door",
+                "Mia Zas", "Italian", "Champaign IL", "$");
+        addRestaurant("kofusion_front_door",
+                "Kofusion", "Korean", "Champaign IL", "$$");
+        addRestaurant("sitara_front_door",
+                "Sitara", "Indian", "Urbana IL", "$");
+        addRestaurant("sakanaya_front_door",
+                "Sakanaya", "Japan", "Champaign IL", "$$");
+        addRestaurant("black_dog_front_door",
+                "Black Dog", "American", "Urbana IL", "$$");
+        addRestaurant("miga_front_door",
+                "Miga", "Asian", "Champaign IL", "$$$");
+        addRestaurant("v_picasso_front_door",
+                "V.Picasso", "American", "Champaign IL", "$$$");
     }
 
     public static void addRestaurant(String restaurantId, String name, String cuisine,

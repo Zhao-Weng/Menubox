@@ -82,20 +82,6 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void doMySearch(String query){
-//        List<String> results = new ArrayList<>();
-//        for (int i = 0; i < 5; i ++){
-//            if(restaurants[i].toLowerCase().contains(query.toLowerCase())){
-//                results.add(restaurants[i]);
-//            }
-//        }
-//        if (results.size() == 0)
-//            results.add("No Restaurants Found");
-
-//        String[] finalResults = results.toArray(new String[results.size()]);
-//        ArrayAdapter<String> adapter =
-//                new ArrayAdapter<>(this, R.layout.search_adapter, finalResults);
-//
-//        listView.setAdapter(adapter);
         List<Restaurant> results = new ArrayList<>();
         for(Restaurant item: restaurantsWithImage)
         {
