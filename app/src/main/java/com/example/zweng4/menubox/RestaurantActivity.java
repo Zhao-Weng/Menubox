@@ -4,6 +4,9 @@ package com.example.zweng4.menubox;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -12,7 +15,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.io.IOException;
+import java.io.InputStream;
 
 public class RestaurantActivity extends AppCompatActivity {
 
@@ -22,6 +31,23 @@ public class RestaurantActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restaurant);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        String restaurantId = getIntent().getStringExtra(SearchActivity.RESTAURANT_ID);
+        Restaurant restaurant = RestaurantDataProvider.restaurantMap.get(restaurantId);
+        TextView tv = (TextView) findViewById(R.id.restaurantMainPageName);
+        tv.setText(restaurant.getName());
+
+        TextView nameText = (TextView) findViewById(R.id.restaurantMainPageName);
+        nameText.setText(restaurant.getName());
+        TextView addressText = (TextView) findViewById(R.id.restaurantMainPageAddress);
+        addressText.setText(restaurant.getAddress());
+        TextView priceText = (TextView) findViewById(R.id.restaurantMainPagePrice);
+        priceText.setText(restaurant.getPrice());
+
+        ImageView iv = (ImageView) findViewById(R.id.restaurantMainPageImage);
+        Bitmap bitmap = getBitmapFromAsset(restaurant.getRestaurantId());
+        iv.setImageBitmap(bitmap);
+
 
         //get the gridView
         GridView gridview = (GridView) findViewById(R.id.gridview);
@@ -42,6 +68,20 @@ public class RestaurantActivity extends AppCompatActivity {
     public void jumpToUploadPage(View view){
         Intent intent = new Intent(getApplicationContext(), UploadActivity.class);
         startActivity(intent);
+    }
+
+    private Bitmap getBitmapFromAsset(String restaurantId)
+    {
+        AssetManager assetManager = getAssets();
+        InputStream stream = null;
+
+        try{
+            stream = assetManager.open(restaurantId + ".png");
+            return BitmapFactory.decodeStream(stream);
+        } catch (IOException e){
+            e.printStackTrace();
+            return null;
+        }
     }
 
     @Override

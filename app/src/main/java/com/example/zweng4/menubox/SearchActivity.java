@@ -15,18 +15,18 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Queue;
 
 public class SearchActivity extends AppCompatActivity {
-    private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitara"};
-
+//    private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitara"};
     ListView listView;
-
-    private List<Restaurant> restaurantsWithImage = RestaurantDataProvider.restaurantList;
-
+    private final List<Restaurant> restaurants = RestaurantDataProvider.restaurantList;
+    public static String RESTAURANT_ID = "RESTAURANT_ID";
+    public List<Restaurant> results;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +45,14 @@ public class SearchActivity extends AppCompatActivity {
         }
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
-                Intent intent = new Intent(getApplicationContext(), RestaurantActivity.class);
-                //use the class name, can change the referred name in the manifest but still
-                //get to the correct class
-                startActivity(intent);
+                if(results.size() != 0) {
+                    Intent intent = new Intent(getApplicationContext(), RestaurantActivity.class);
+                    //use the class name, can change the referred name in the manifest but still
+                    //get to the correct class
+                    Restaurant restaurant = results.get(position);
+                    intent.putExtra(RESTAURANT_ID, restaurant.getRestaurantId());
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -118,8 +122,8 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void doMySearch(String query){
-        List<Restaurant> results = new ArrayList<>();
-        for(Restaurant item: restaurantsWithImage)
+        results = new ArrayList<>();
+        for(Restaurant item: restaurants)
         {
             String lowerCaseQuery = query.toLowerCase();
             //if the query matches any of the restaurant information (including name, address, etc.
@@ -135,8 +139,10 @@ public class SearchActivity extends AppCompatActivity {
         if(results.size() == 0)
         {
             String[] notFound = new String[1];
-            notFound[0] = new String("No Restaurants Found");
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.search_adapter, notFound);
+            notFound[0] = new String("No Restaurant Found");
+
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, R.layout.no_list_item, notFound);
+            listView.setAdapter(adapter);
         }
         else {
             //Restaurant[] finalResults = results.toArray(new Restaurant[results.size()]);
