@@ -48,7 +48,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textCursorDrawable="@drawable/white_cursor" />
+                    android:textCursorDrawable="@drawable/color_cursor" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -65,7 +65,7 @@
                     android:inputType="textEmailAddress"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textCursorDrawable="@drawable/white_cursor" />
+                    android:textCursorDrawable="@drawable/color_cursor" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -85,7 +85,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textCursorDrawable="@drawable/white_cursor" />
+                    android:textCursorDrawable="@drawable/color_cursor" />
 
             </android.support.design.widget.TextInputLayout>
 
@@ -105,7 +105,7 @@
                     android:inputType="textPassword"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:textCursorDrawable="@drawable/white_cursor" />
+                    android:textCursorDrawable="@drawable/color_cursor" />
 
             </android.support.design.widget.TextInputLayout>
 
