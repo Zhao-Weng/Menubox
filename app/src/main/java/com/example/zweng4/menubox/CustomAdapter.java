@@ -41,10 +41,8 @@ class CustomAdapter extends ArrayAdapter<String>{
             }
         });
 
-        Log.d("tag",singleItem);
         int i = 0;
         for(i=0;i<restaurants.size();i++) {
-            Log.d("rearadfaf",restaurants.get(i).getName());
             if(singleItem.equalsIgnoreCase(restaurants.get(i).getName())){
                 break;
             }

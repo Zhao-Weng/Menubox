@@ -13,12 +13,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
 public class UploadActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,7 @@ public class UploadActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
 
     }
 
@@ -127,7 +128,7 @@ public class UploadActivity extends AppCompatActivity {
 
     public void uploadImage(View v)
     {
-
+        Toast.makeText(UploadActivity.this,"Menu uploaded",Toast.LENGTH_SHORT).show();
     }
 
 

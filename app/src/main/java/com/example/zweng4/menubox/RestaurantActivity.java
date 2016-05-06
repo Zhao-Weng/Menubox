@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -17,8 +18,10 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -66,6 +69,62 @@ public class RestaurantActivity extends AppCompatActivity {
                 String menu_id = menuListAdapter.getMenuId(position);
                 intent.putExtra(MENU_ID, menu_id);
                 startActivity(intent);
+            }
+        });
+        GridView other_grid_view = (GridView) findViewById(R.id.gridView2);
+        other_grid_view.setAdapter(menuListAdapter);
+        other_grid_view.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                // Send intent to SingleViewActivity
+                Intent intent = new Intent(getApplicationContext(), SingleViewActivity.class);
+
+                // Pass image index
+
+                String menu_id = menuListAdapter.getMenuId(position);
+                intent.putExtra(MENU_ID, menu_id);
+                startActivity(intent);
+            }
+        });
+        ImageButton upvote_most_popular = (ImageButton)findViewById(R.id.imageButton);
+        upvote_most_popular.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Toast.makeText(RestaurantActivity.this,"Menu Upvoted",Toast.LENGTH_SHORT).show();
+            }
+        });
+        ImageButton upvote_other_munu = (ImageButton)findViewById(R.id.imageButton3);
+        upvote_other_munu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Toast.makeText(RestaurantActivity.this,"Menu Upvoted",Toast.LENGTH_SHORT).show();
+            }
+        });
+        ImageButton downvote_most_popular = (ImageButton)findViewById(R.id.imageButton2);
+        downvote_most_popular.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Toast.makeText(RestaurantActivity.this,"Menu Downvoted",Toast.LENGTH_SHORT).show();
+            }
+        });
+        ImageButton downvote_other_menu = (ImageButton)findViewById(R.id.imageButton4);
+        downvote_other_menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Toast.makeText(RestaurantActivity.this,"Menu Downvoted",Toast.LENGTH_SHORT).show();
+            }
+        });
+        ImageButton expand_most_popular = (ImageButton)findViewById(R.id.imageButton5);
+        expand_most_popular.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Toast.makeText(RestaurantActivity.this,"Rest of Images Shown",Toast.LENGTH_SHORT).show();
+            }
+        });
+        ImageButton expand_other_menu = (ImageButton)findViewById(R.id.imageButton6);
+        expand_other_menu.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+                Toast.makeText(RestaurantActivity.this,"Rest of Images Shown",Toast.LENGTH_SHORT).show();
             }
         });
     }
