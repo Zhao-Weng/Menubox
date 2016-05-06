@@ -64,13 +64,13 @@ public class RestaurantListAdapter extends ArrayAdapter<Restaurant>{
 
                                                @Override
                                                public void onClick(View v) {
-                                                   Toast.makeText(getContext(), "Favorite added successfully", Toast.LENGTH_LONG).show();
+                                                   Toast.makeText(getContext(), "Favorite added successfully", Toast.LENGTH_SHORT).show();
 
                                                   }
                                               }
 
         );
-        fav_view.setOnClickListener(new
+        com_view.setOnClickListener(new
 
                                             View.OnClickListener()
 
@@ -78,7 +78,7 @@ public class RestaurantListAdapter extends ArrayAdapter<Restaurant>{
 
                                                 @Override
                                                 public void onClick(View v) {
-                                                    Toast.makeText(getContext(), "Compare item added successfully", Toast.LENGTH_LONG).show();
+                                                    Toast.makeText(getContext(), "Compare item added successfully", Toast.LENGTH_SHORT).show();
 
                                                 }
                                             }
