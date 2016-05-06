@@ -27,8 +27,12 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class FavouriteActivity extends AppCompatActivity {
-    String[] mobileArray = {" "," "," ", " ", " ", " ", " ", " ", " ", " ", " "," "," "," "," "," "," ", " ", " "," ", " ",};
+    //String[] mobileArray = {" "," "," ", " ", " ", " ", " ", " ", " ", " ", " "," "," "," "," "," "," ", " ", " "," ", " ",};
+    private List<String> mobileArray = new ArrayList<>();
     private EditText fav_txt;
     private ImageView search_btn;
     private SQLiteDatabase sqLiteDatabase;
@@ -64,23 +68,28 @@ public class FavouriteActivity extends AppCompatActivity {
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Cravings', '603 S Wright St');");
 
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Dominos Piazza','1108 N Cunningham Ave');");
+        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Dominos Pizza','1108 N Ave');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Kofusion','701 S Gregory St');");
         sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sitara','114 S Race St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sakanaya','403 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Zorba','627 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Golden Work','405 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Seoul Taco','608 S 6th St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Spoon House','616 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Qdoba','1401 W Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Azzip Pizza','505 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sushi Ichiban','619 S Wright St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Flat Top Grill','607 S 6th St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Mandarin Work','403 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Antonios Piazza','619 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sitara','114 S Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Which Wich','512 E Green St');");
-        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Timpones','710 S W Goodwin Ave');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Cravings', '603 S Wright St');");
+//
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Dominos Piazza','1108 N Cunningham Ave');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Kofusion','701 S Gregory St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sitara','114 S Race St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sakanaya','403 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Zorba','627 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Golden Work','405 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Seoul Taco','608 S 6th St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Spoon House','616 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Qdoba','1401 W Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Azzip Pizza','505 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sushi Ichiban','619 S Wright St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Flat Top Grill','607 S 6th St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Mandarin Work','403 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Antonios Piazza','619 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Sitara','114 S Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Which Wich','512 E Green St');");
+//        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('Timpones','710 S W Goodwin Ave');");
         sqLiteDatabase.close();
 
         fav = fav_txt.getText().toString();
@@ -107,7 +116,9 @@ public class FavouriteActivity extends AppCompatActivity {
                 location = query.getString(1);
 
 
-                mobileArray[i] = name + "   " + location;
+                //mobileArray[i] = name + "   " + location;
+                if(name != null && location != null)
+                    mobileArray.add(name);
                 i++;
 
             } while (query.moveToNext() && i < max);
@@ -127,8 +138,8 @@ public class FavouriteActivity extends AppCompatActivity {
         search_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                for (i = 0; i < 14; i++)
-                    mobileArray[i] = " ";
+//                for (i = 0; i < 14; i++)
+//                    mobileArray[i] = " ";
                 fav = fav_txt.getText().toString();
                 max = 0;
                 sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
@@ -153,7 +164,9 @@ public class FavouriteActivity extends AppCompatActivity {
                         location = query.getString(1);
 
 
-                        mobileArray[i] = name + "   " + location;
+                        //mobileArray[i] = name + "   " + location;
+                        if(name != null && location != null)
+                            mobileArray.add(name);
                         i++;
 
                     } while (query.moveToNext() && i < max);

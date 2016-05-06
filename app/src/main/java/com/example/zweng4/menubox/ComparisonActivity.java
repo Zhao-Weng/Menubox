@@ -11,15 +11,21 @@ import android.support.v7.widget.SearchView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ComparisonActivity extends AppCompatActivity {
-    private String[] mobileArray = {" "," "," "," "," "," "," "," "};
+    //private String[] mobileArray = {" "," "," "," "," "," "," "," "};
+    private List<String> mobileArray = new ArrayList<>();
     private EditText compare_txt;
     //private ImageButton search_btn;
     private ImageView search_btn;
@@ -82,7 +88,10 @@ public class ComparisonActivity extends AppCompatActivity {
                 location = query.getString(1);
 
 
-                mobileArray[i] = name + "   " + location;
+                //mobileArray[i] = name + "   " + location;
+                //i++;
+                if(name != null && location != null)
+                    mobileArray.add(name);
                 i++;
 
             } while (query.moveToNext() && i < max);
@@ -103,8 +112,8 @@ public class ComparisonActivity extends AppCompatActivity {
 
         search_btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                for(i = 0; i <8;i++)
-                    mobileArray[i] = " ";
+                //for(i = 0; i <8;i++)
+                    //mobileArray[i] = " ";
                 compare = compare_txt.getText().toString();
                 max = 0;
                 sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
@@ -129,7 +138,9 @@ public class ComparisonActivity extends AppCompatActivity {
                         location = query.getString(1);
 
 
-                        mobileArray[i] = name + "   " + location;
+                        //mobileArray[i] = name + "   " + location;
+                        if(name != null && location != null)
+                            mobileArray.add(name + "  " + location);
                         i++;
 
                     } while (query.moveToNext() && i < max);
@@ -148,6 +159,7 @@ public class ComparisonActivity extends AppCompatActivity {
 
             }
         });
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

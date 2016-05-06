@@ -23,11 +23,11 @@
         android:textColor="#0099CC">
     </TextView>
 
-    <Button
+    <ImageButton
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="like"
+        android:src="@drawable/x_button"
         android:id="@+id/item_btn"
         android:textSize="25px"
         android:background="#FDF9EE"
@@ -36,18 +36,41 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
+    <GridView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button"
-        android:text="VS"
-        android:textSize="25px"
-        android:textColor="#DDEE6379"
-        android:background="#FDF9EE"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/item_btn"
-        android:layout_toStartOf="@+id/item_btn" />
+        android:id="@+id/gridView"
+        android:numColumns="5"
+        android:horizontalSpacing="5dp"
+        android:verticalSpacing="5dp"
+        android:layout_below="@+id/item_text" />
+
+
+    <!--<Button-->
+        <!--style="?android:attr/buttonStyleSmall"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="like"-->
+        <!--android:id="@+id/item_btn"-->
+        <!--android:textSize="25px"-->
+        <!--android:background="#FDF9EE"-->
+        <!--android:textColor="#DDEE6379"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true" />-->
+
+    <!--<Button-->
+        <!--style="?android:attr/buttonStyleSmall"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/button"-->
+        <!--android:text="VS"-->
+        <!--android:textSize="25px"-->
+        <!--android:textColor="#DDEE6379"-->
+        <!--android:background="#FDF9EE"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_toLeftOf="@+id/item_btn"-->
+        <!--android:layout_toStartOf="@+id/item_btn" />-->
 
 
 
