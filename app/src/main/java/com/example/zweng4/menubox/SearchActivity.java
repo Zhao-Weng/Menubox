@@ -158,7 +158,7 @@ public class SearchActivity extends AppCompatActivity {
         sqLiteDatabase.execSQL("DROP TABLE restaurants");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
         //create a brand new table
-        
+
     }
     public void addToCompareList(View v){
         sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);

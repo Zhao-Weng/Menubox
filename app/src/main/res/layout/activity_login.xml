@@ -115,9 +115,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#4DFF"
+                android:background="#EE6379"
                 android:text="Sign up"
-                android:textColor="#FFFF"
+                android:textColor="#3F51B5"
                 android:textStyle="bold" />
 
         </LinearLayout>
