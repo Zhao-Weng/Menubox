@@ -1,11 +1,11 @@
 package com.example.zweng4.menubox;
 
-import android.app.ListActivity;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,13 +13,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Queue;
+
 
 public class SearchActivity extends AppCompatActivity {
 //    private String restaurants[] = {"Cravings","Dominos Pizza","Mia Zas","Kofusion","Sitara"};
@@ -27,6 +25,8 @@ public class SearchActivity extends AppCompatActivity {
     private final List<Restaurant> restaurants = RestaurantDataProvider.restaurantList;
     public static String RESTAURANT_ID = "RESTAURANT_ID";
     public List<Restaurant> results;
+
+    private SQLiteDatabase sqLiteDatabase;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -152,6 +152,19 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
 
-    public void addToFavoriteList(View v){}
-    public void addToCompareList(View v){}
+    public void addToFavoriteList(View v){
+        sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
+        sqLiteDatabase.execSQL("DROP TABLE restaurants");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
+        //create a brand new table
+
+    }
+    public void addToCompareList(View v){
+        sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
+        sqLiteDatabase.execSQL("DROP TABLE restaurants");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
+        //create a brand new table
+    }
 }
