@@ -22,9 +22,10 @@ import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
 
 public class RestaurantActivity extends AppCompatActivity {
-
+    public static String MENU_ID = "MENU_ID";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,16 +51,21 @@ public class RestaurantActivity extends AppCompatActivity {
 
 
         //get the gridView
+        List<String> menus = RestaurantDataProvider.restaurantMenuMap.get(restaurantId);
+        final RestaurantMenuListAdapter menuListAdapter = new RestaurantMenuListAdapter(this, R.layout.grid_item, menus);
         GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+        gridview.setAdapter(menuListAdapter);
         gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
                 // Send intent to SingleViewActivity
-                Intent i = new Intent(getApplicationContext(), SingleViewActivity.class);
+                Intent intent = new Intent(getApplicationContext(), SingleViewActivity.class);
 
                 // Pass image index
-                i.putExtra("id", position);
-                startActivity(i);
+//                intent.putExtra("id", position);
+//                intent.putExtra("menuList", );
+                String menu_id = menuListAdapter.getMenuId(position);
+                intent.putExtra(MENU_ID, menu_id);
+                startActivity(intent);
             }
         });
     }
@@ -76,7 +82,7 @@ public class RestaurantActivity extends AppCompatActivity {
         InputStream stream = null;
 
         try{
-            stream = assetManager.open(restaurantId + ".png");
+            stream = assetManager.open("frontDoor/" + restaurantId + ".png");
             return BitmapFactory.decodeStream(stream);
         } catch (IOException e){
             e.printStackTrace();

@@ -57,7 +57,7 @@ public class RestaurantListAdapter extends ArrayAdapter<Restaurant>{
         InputStream stream = null;
 
         try{
-            stream = assetManager.open(restaurantId + ".png");
+            stream = assetManager.open("frontDoor/" + restaurantId + ".png");
             return BitmapFactory.decodeStream(stream);
         } catch (IOException e){
             e.printStackTrace();

@@ -15,9 +15,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ImageAdapter extends BaseAdapter {
-//    private Context mContext;
-//    private float mThumbWidthdp = 90;
-//    private float mThumbHeightdp = 100;
     private final List<Item> mItems = new ArrayList<Item>();
     private final LayoutInflater mInflater;
     // Constructor
@@ -30,8 +27,6 @@ public class ImageAdapter extends BaseAdapter {
         mItems.add(new Item(R.drawable.m_4));
         mItems.add(new Item(R.drawable.m_5));
         mItems.add(new Item(R.drawable.m_6));
-
-        //mContext = context;
     }
 
     public int getCount() {
@@ -51,22 +46,7 @@ public class ImageAdapter extends BaseAdapter {
 
     // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
-//        ImageView imageView;
-//
-//        if (convertView == null) {
-//            int mThumbWidthPixel = convertDpToPixels(mThumbWidthdp, mContext);
-//            int mThumbHeightPixel = convertDpToPixels(mThumbHeightdp, mContext);
-//            imageView = new ImageView(mContext);
-//            imageView.setLayoutParams(new GridView.LayoutParams(mThumbWidthPixel, mThumbHeightPixel));
-//            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-//            imageView.setBackgroundResource(R.drawable.grid_item_corner);
-//            //imageView.setPadding(8, 8, 8, 8);
-//        } else {
-//            imageView = (ImageView) convertView;
-//        }
-//        imageView.setImageResource(mThumbIds[position]);
-//
-//        return imageView;
+
         View v = convertView;
         ImageView picture;
 
@@ -84,21 +64,6 @@ public class ImageAdapter extends BaseAdapter {
 
         return v;
     }
-    //convert desire dp to pixels
-//    public static int convertDpToPixels(float dp, Context context){
-//        Resources resources = context.getResources();
-//        return (int) TypedValue.applyDimension(
-//                TypedValue.COMPLEX_UNIT_DIP,
-//                dp,
-//                resources.getDisplayMetrics()
-//        );
-//    }
-    // Keep all Images in array
-//    public Integer[] mThumbIds = {
-//            R.drawable.m1, R.drawable.m2,
-//            R.drawable.m_3, R.drawable.m_4,
-//            R.drawable.m_5, R.drawable.m_6
-//    };
 
     public static class Item {
         public final int drawableId;

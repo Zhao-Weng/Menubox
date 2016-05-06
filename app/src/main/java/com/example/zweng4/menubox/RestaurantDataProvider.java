@@ -1,6 +1,7 @@
 package com.example.zweng4.menubox;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +14,7 @@ public final class RestaurantDataProvider {
 
     public static List<Restaurant> restaurantList= new ArrayList<>();
     public static Map<String, Restaurant> restaurantMap = new HashMap<>();
-
+    public static Map<String, List<String>> restaurantMenuMap = new HashMap<>();
     static {
 
         addRestaurant("cravings_front_door",
@@ -34,25 +35,15 @@ public final class RestaurantDataProvider {
                 "Miga", "Asian", "Champaign IL", "$$$");
         addRestaurant("v_picasso_front_door",
                 "V.Picasso", "American", "Champaign IL", "$$$");
-
-        addRestaurantMap("cravings_front_door","cravings_front_door",
-                "Cravings", "Chinese", "Champaign IL", "$");
-        addRestaurantMap("dominos_front_door", "dominos_front_door",
-                "Dominos Pizza", "Italian", "Champaign IL", "$");
-        addRestaurantMap("mia_zas_front_door", "mia_zas_front_door",
-                "Mia Zas", "Italian", "Champaign IL", "$");
-        addRestaurantMap("kofusion_front_door", "kofusion_front_door",
-                "Kofusion", "Korean", "Champaign IL", "$$");
-        addRestaurantMap("sitara_front_door", "sitara_front_door",
-                "Sitara", "Indian", "Urbana IL", "$");
-        addRestaurantMap("sakanaya_front_door", "sakanaya_front_door",
-                "Sakanaya", "Japan", "Champaign IL", "$$");
-        addRestaurantMap("black_dog_front_door", "black_dog_front_door",
-                "Black Dog", "American", "Urbana IL", "$$");
-        addRestaurantMap("miga_front_door", "miga_front_door",
-                "Miga", "Asian", "Champaign IL", "$$$");
-        addRestaurantMap("v_picasso_front_door", "v_picasso_front_door",
-                "V.Picasso", "American", "Champaign IL", "$$$");
+        addRestaurantMenu("cravings_front_door", new String[]{"cravings_menu_1", "cravings_menu_2"});
+        addRestaurantMenu("black_dog_front_door", new String[]{"black_dog_menu_1", "black_dog_menu_2", "black_dog_menu_3"});
+        addRestaurantMenu("dominos_front_door", new String[]{"dominos_menu_1", "dominos_menu_2", "dominos_menu_3"});
+        addRestaurantMenu("kofusion_front_door", new String[]{"kofusion_menu_1", "kofusion_menu_2", "kofusion_menu_3"});
+        addRestaurantMenu("miga_front_door", new String[]{"miga_menu_1", "miga_menu_2", "miga_menu_3"});
+        addRestaurantMenu("mia_zas_front_door", new String[]{"mia_zas_menu_1"});
+        addRestaurantMenu("sakanaya_front_door", new String[]{"sakanaya_menu_1"});
+        addRestaurantMenu("sitara_front_door", new String[]{"sitara_menu_1", "sitara_menu_2", "sitara_menu_3"});
+        addRestaurantMenu("v_picasso_front_door", new String[]{"v_picasso_menu_1","v_picasso_menu_2","v_picasso_menu_3","v_picasso_menu_4"});
 
     }
 
@@ -62,13 +53,13 @@ public final class RestaurantDataProvider {
     {
         Restaurant item = new Restaurant(restaurantId, name, cuisine, address, price);
         restaurantList.add(item);
+        restaurantMap.put(restaurantId, item);
     }
 
-    public static void addRestaurantMap(String key, String restaurantId, String name, String cuisine,
-                                        String address, String price)
+    public static void addRestaurantMenu(String restaurantId,  String[] menus)
     {
-        Restaurant item = new Restaurant(restaurantId, name, cuisine, address, price);
-        restaurantMap.put(key, item);
+        List<String> menuList = new ArrayList<String>(Arrays.asList(menus));
+        restaurantMenuMap.put(restaurantId, menuList);
     }
 
 }
