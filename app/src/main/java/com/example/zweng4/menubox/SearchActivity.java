@@ -158,6 +158,18 @@ public class SearchActivity extends AppCompatActivity {
         sqLiteDatabase.execSQL("DROP TABLE restaurants");
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
         //create a brand new table
+        listView = (ListView) findViewById(R.id.list);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                if (results.size() != 0) {
+                    Intent intent = new Intent(getApplicationContext(), RestaurantActivity.class);
+                    //use the class name, can change the referred name in the manifest but still
+                    //get to the correct class
+                    Restaurant restaurant = results.get(position);
+                    sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('" + restaurant.getName() + "', '" + restaurant.getAddress() + "')");
+                }
+            }
+        });
 
     }
     public void addToCompareList(View v){
