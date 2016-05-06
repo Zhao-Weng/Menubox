@@ -3,6 +3,7 @@ package com.example.zweng4.menubox;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -24,6 +25,8 @@ public class SearchActivity extends AppCompatActivity {
     private final List<Restaurant> restaurants = RestaurantDataProvider.restaurantList;
     public static String RESTAURANT_ID = "RESTAURANT_ID";
     public List<Restaurant> results;
+
+    private SQLiteDatabase sqLiteDatabase;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,6 +152,10 @@ public class SearchActivity extends AppCompatActivity {
         }
     }
 
-    public void addToFavoriteList(View v){}
-    public void addToCompareList(View v){}
+    public void addToFavoriteList(View v){
+        sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+    }
+    public void addToCompareList(View v){
+        sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+    }
 }
