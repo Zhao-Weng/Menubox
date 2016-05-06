@@ -47,18 +47,18 @@ public class RestaurantListAdapter extends ArrayAdapter<Restaurant>{
 
         ImageView iv = (ImageView) convertView.findViewById(R.id.restaurantImageView);
         Bitmap bitmap = getBitmapFromAsset(restaurant.getRestaurantId());
-        iv.setImageBitmap(bitmap);
+        iv.setImageBitmap(bitmap);   //set bit map for iv.
         return convertView;
     }
 
     private Bitmap getBitmapFromAsset(String restaurantId)
     {
-        AssetManager assetManager = getContext().getAssets();
+        AssetManager assetManager = getContext().getAssets();   //set up assetManager
         InputStream stream = null;
 
         try{
-            stream = assetManager.open("frontDoor/" + restaurantId + ".png");
-            return BitmapFactory.decodeStream(stream);
+            stream = assetManager.open("frontDoor/" + restaurantId + ".png");   //use asset Manager to open the file and create stream
+            return BitmapFactory.decodeStream(stream);     //decode the stream
         } catch (IOException e){
             e.printStackTrace();
             return null;
