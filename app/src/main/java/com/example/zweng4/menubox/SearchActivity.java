@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -153,6 +154,7 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     public void addToFavoriteList(View v){
+        Toast.makeText(SearchActivity.this,"Restaurant Added to Favorite List",Toast.LENGTH_SHORT).show();
         sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
         sqLiteDatabase.execSQL("DROP TABLE restaurants");
@@ -161,6 +163,7 @@ public class SearchActivity extends AppCompatActivity {
 
     }
     public void addToCompareList(View v){
+        Toast.makeText(SearchActivity.this,"Restaurant Added to Compare List",Toast.LENGTH_SHORT).show();
         sqLiteDatabase = getBaseContext().openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
         sqLiteDatabase.execSQL("DROP TABLE restaurants");

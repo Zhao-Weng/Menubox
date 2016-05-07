@@ -24,8 +24,10 @@
 
     <Button
         android:id="@+id/add_image_button"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:background="#DDEE6379"
+        android:textColor="#FFFFFF"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -34,8 +36,10 @@
 
     <Button
         android:id="@+id/upload_button"
-        android:layout_width="170dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:background="#DDEE6379"
+        android:textColor="#FFFFFF"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"

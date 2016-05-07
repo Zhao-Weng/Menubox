@@ -128,27 +128,25 @@
         android:layout_alignParentStart="true"
         android:numColumns="4"/>
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton"
         android:src="@drawable/upvote"
-        android:layout_above="@+id/textView3"
-        android:layout_toEndOf="@+id/textView2"
-        android:layout_below="@+id/restaurantMainPageOverview"
-        android:layout_toRightOf="@+id/textView2" />
+        android:layout_alignBottom="@+id/imageButton2"
+        android:layout_toLeftOf="@+id/imageButton2"
+        android:layout_toStartOf="@+id/imageButton2" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton2"
         android:src="@drawable/downvote"
         android:layout_above="@+id/textView3"
-        android:layout_toEndOf="@+id/imageButton"
-        android:layout_below="@+id/restaurantMainPageOverview"
-        android:layout_toRightOf="@+id/imageButton" />
+        android:layout_alignLeft="@+id/uploadButton"
+        android:layout_alignStart="@+id/uploadButton" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton3"
@@ -159,36 +157,35 @@
         android:layout_alignLeft="@+id/imageButton"
         android:layout_alignStart="@+id/imageButton" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton4"
         android:src="@drawable/downvote"
         android:layout_above="@+id/gridView2"
-        android:layout_alignTop="@+id/textView3"
-        android:layout_alignLeft="@+id/imageButton2"
-        android:layout_alignStart="@+id/imageButton2" />
+        android:layout_alignTop="@+id/imageButton6"
+        android:layout_toRightOf="@+id/imageButton"
+        android:layout_toEndOf="@+id/imageButton" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton5"
         android:src="@drawable/expand_menu"
-        android:layout_above="@+id/textView3"
-        android:layout_toEndOf="@+id/imageButton2"
-        android:layout_below="@+id/restaurantMainPageOverview"
-        android:layout_toRightOf="@+id/imageButton2" />
+        android:layout_alignTop="@+id/imageButton2"
+        android:layout_alignRight="@+id/restaurantMainPageOverview"
+        android:layout_alignEnd="@+id/restaurantMainPageOverview" />
 
-    <ImageButton
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/imageButton6"
         android:src="@drawable/expand_menu"
         android:layout_above="@+id/gridView2"
-        android:layout_toRightOf="@+id/imageButton4"
-        android:layout_alignTop="@+id/imageButton4"
         android:layout_alignRight="@+id/imageButton5"
-        android:layout_alignEnd="@+id/imageButton5" />
+        android:layout_alignEnd="@+id/imageButton5"
+        android:layout_alignLeft="@+id/imageButton5"
+        android:layout_alignStart="@+id/imageButton5" />
     <!--android:layout_marginBottom="41dp"-->
 
 

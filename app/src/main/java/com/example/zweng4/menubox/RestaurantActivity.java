@@ -85,42 +85,42 @@ public class RestaurantActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        ImageButton upvote_most_popular = (ImageButton)findViewById(R.id.imageButton);
+        ImageView upvote_most_popular = (ImageView)findViewById(R.id.imageButton);
         upvote_most_popular.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
                 Toast.makeText(RestaurantActivity.this,"Menu Upvoted",Toast.LENGTH_SHORT).show();
             }
         });
-        ImageButton upvote_other_munu = (ImageButton)findViewById(R.id.imageButton3);
+        ImageView upvote_other_munu = (ImageView)findViewById(R.id.imageButton3);
         upvote_other_munu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
                 Toast.makeText(RestaurantActivity.this,"Menu Upvoted",Toast.LENGTH_SHORT).show();
             }
         });
-        ImageButton downvote_most_popular = (ImageButton)findViewById(R.id.imageButton2);
+        ImageView downvote_most_popular = (ImageView)findViewById(R.id.imageButton2);
         downvote_most_popular.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
                 Toast.makeText(RestaurantActivity.this,"Menu Downvoted",Toast.LENGTH_SHORT).show();
             }
         });
-        ImageButton downvote_other_menu = (ImageButton)findViewById(R.id.imageButton4);
+        ImageView downvote_other_menu = (ImageView)findViewById(R.id.imageButton4);
         downvote_other_menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
                 Toast.makeText(RestaurantActivity.this,"Menu Downvoted",Toast.LENGTH_SHORT).show();
             }
         });
-        ImageButton expand_most_popular = (ImageButton)findViewById(R.id.imageButton5);
+        ImageView expand_most_popular = (ImageView)findViewById(R.id.imageButton5);
         expand_most_popular.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
                 Toast.makeText(RestaurantActivity.this,"Rest of Images Shown",Toast.LENGTH_SHORT).show();
             }
         });
-        ImageButton expand_other_menu = (ImageButton)findViewById(R.id.imageButton6);
+        ImageView expand_other_menu = (ImageView)findViewById(R.id.imageButton6);
         expand_other_menu.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Perform action on click
