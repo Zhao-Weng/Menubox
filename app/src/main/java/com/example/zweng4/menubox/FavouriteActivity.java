@@ -27,7 +27,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FavouriteActivity extends AppCompatActivity {
+ public class FavouriteActivity extends AppCompatActivity {
     //String[] mobileArray = {" "," "," ", " ", " ", " ", " ", " ", " ", " ", " "," "," "," "," "," "," ", " ", " "," ", " ",};
     private List<String> mobileArray = new ArrayList<>();
     private EditText fav_txt;
@@ -51,6 +51,7 @@ public class FavouriteActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_favourite);
         adapter = new CustomAdapter(this, mobileArray);
@@ -232,6 +233,18 @@ public class FavouriteActivity extends AppCompatActivity {
 
         return true;
     }
+    public void openOrCreateDatabase(String Name, String Address){
+        openOrCreateDatabase("sqlite-test-1.db", MODE_PRIVATE, null);
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
+        sqLiteDatabase.execSQL("DROP TABLE restaurants");
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS restaurants(name TEXT, location TEXT)");
+        sqLiteDatabase.execSQL("INSERT INTO restaurants VALUES('" + Name + "', '" + Address + "')");
+        Toast.makeText(getBaseContext(), "error retrieving data", Toast.LENGTH_LONG).show();
+        sqLiteDatabase.close();
+        Toast.makeText(getBaseContext(), "Favourite added", Toast.LENGTH_LONG).show();
+
+
+    };
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

@@ -63,16 +63,16 @@
 
         <ImageView
             android:id="@+id/compareIcon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="bottom"
             android:src="@drawable/compareicon"
             android:onClick="addToCompareList"/>
 
         <ImageView
             android:id="@+id/favoriteIcon"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_gravity="bottom"
             android:src="@drawable/favoriteicon"
             android:onClick="addToFavoriteList"/>
