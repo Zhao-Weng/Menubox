@@ -6,12 +6,11 @@ This app supports restaurant random search, handy comparison. Also, this app pay
 3. Designed profile for each user with their chosen favorite restaurants and supported handy comparison with clickable overview
 list of entrees  
 
-
+Main page
 ![main_page](https://cloud.githubusercontent.com/assets/17131715/18977430/d5072cd6-867f-11e6-92b1-a52a7429401a.png)
-Main page 
-
-![search](https://cloud.githubusercontent.com/assets/17131715/18977447/e5495c68-867f-11e6-8d9a-ceb3b4bc551a.png)
 Search from SQLite
+![search](https://cloud.githubusercontent.com/assets/17131715/18977447/e5495c68-867f-11e6-8d9a-ceb3b4bc551a.png)
+
 
 ![menu](https://cloud.githubusercontent.com/assets/17131715/18977451/f1a1bcc6-867f-11e6-98dd-a7f7dc97cda2.png)
 Menus of a specific restaurant with customized Gridview
